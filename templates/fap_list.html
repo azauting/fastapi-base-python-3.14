@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de FAP</title>
+    <script src="https://unpkg.com/htmx.org@1.9.10"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-6">
+    <h1 class="text-2xl font-bold mb-4">FAP Recientes</h1>
+
+    <!-- Filtro por estado -->
+    <select id="estado" class="border rounded p-1 mb-4"
+            hx-get="/fap/table"
+            hx-target="#fap-table"
+            hx-trigger="change"
+            name="estado">
+        <option value="">Todos</option>
+        <option value="Abierto">Abierto</option>
+        <option value="Cerrado">Cerrado</option>
+    </select>
+
+    <!-- Contenedor de la tabla que HTMX actualizará -->
+    <div id="fap-table" hx-get="/fap/table" hx-trigger="load">
+        {% include "fap_table.html" %}
+    </div>
+</body>
+</html>
+
+</html>

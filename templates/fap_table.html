@@ -1,0 +1,24 @@
+<table class="min-w-full bg-white shadow-md rounded-lg overflow-hidden">
+    <thead class="bg-gray-200">
+        <tr>
+            <th class="py-2 px-4">ID</th>
+            <th class="py-2 px-4">Nro FAP</th>
+            <th class="py-2 px-4">Nro Atención</th>
+            <th class="py-2 px-4">Motivo</th>
+            <th class="py-2 px-4">Fecha Arribo</th>
+            <th class="py-2 px-4">Estado</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for fap in faps %}
+        <tr class="border-b">
+            <td class="py-2 px-4">{{ fap.id_fap }}</td>
+            <td class="py-2 px-4">{{ fap.nro_fap }}</td>
+            <td class="py-2 px-4">{{ fap.nrooatenc }}</td>
+            <td class="py-2 px-4">{{ fap.motivo_consulta }}</td>
+            <td class="py-2 px-4">{{ fap.fecha_arribo_pac }}</td>
+            <td class="py-2 px-4">{{ fap.estado_fap }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
